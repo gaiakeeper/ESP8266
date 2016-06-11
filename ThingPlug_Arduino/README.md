@@ -2,7 +2,8 @@
 This is an example ThingPlug device on ESP8266. This is derived from [SKT-ThingPlug starter kit](https://github.com/SKT-ThingPlug/thingplug-starter-kit).
 
 # Required Libraries
-This requires MQTT(PubSubClient) and TinyXML2. PubSubClient can be installed using Arduino Library Manager. In installing PubSubClient, you should change the buffer size in PubSubClient.h as below.
+This requires MQTT(PubSubClient) and TinyXML2 libraries.
+Using Arduino Library Manager, you can easily install PubSubClient. But, you should change the buffer size in PubSubClient.h as below.
 
 ```
 // MQTT_VERSION : Pick the version
@@ -27,7 +28,7 @@ This requires MQTT(PubSubClient) and TinyXML2. PubSubClient can be installed usi
 #endif
 ```
 
-TinyXML2 should be installed manually. You have only to download [tinyxml2.h/cpp](https://github.com/leethomason/tinyxml2) and copy them into Arduino Library folder with new TinyXML2 folder.
+You should install TinyXML2 manually. You have only to download [tinyxml2.h/cpp](https://github.com/leethomason/tinyxml2) and copy them into Arduino Library folder with new TinyXML2 folder(\Arduino\libraries\TinyXML2\tinyxml2.h/cpp)
 
 # Required Configrations
 You should specify SSID/PASSWORD for Wi-Fi AP.
@@ -40,3 +41,6 @@ And next, you should create your own device ID. Phone number is recommended for 
 ```
 const char* deviceID = "0.2.481.1.101.01099889911";
 ```
+
+# Required FLASH
+Your ESP8266 module should have more than 1M FLASH. You can specify FLASH size in Arduino IDE(Tools menu).
