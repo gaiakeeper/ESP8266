@@ -11,16 +11,11 @@
 using namespace tinyxml2;
 
 // Update these with values suitable for your network.
-const char* ssid     = "SK_WiFi8921";
-const char* password = "1408044211";
-
-/*
-const char* ssid     = "dream_guest";
-const char* password = "dreamguest123";
-*/
+const char* ssid     = "<<<ssid>>>";
+const char* password = "<<<password>>>";
 
 // device ID, should be unique
-const char* deviceID = "0.2.481.1.101.01037542879";      // change device ID with your phone number
+const char* deviceID = "0.2.481.1.101.01099889911";      // change device ID with your phone number
 const char* passcode = "12345";                          // 12345 for starter kit
 
 const char* containerName = "myContainer";
