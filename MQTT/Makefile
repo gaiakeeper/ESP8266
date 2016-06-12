@@ -160,7 +160,7 @@ BUILD_DIR	:= $(addprefix $(BUILD_BASE)/,$(MODULES))
 SDK_LIBDIR	:= $(addprefix $(SDK_BASE)/,$(SDK_LIBDIR))
 SDK_INCDIR	:= $(addprefix -I$(SDK_BASE)/,$(SDK_INCDIR))
 SRC			:= $(foreach sdir,$(SRC_DIR),$(wildcard $(sdir)/*.c))
-SRC_CPP		:= $(foreach sdir,$(SRC_DIR),$(wildcard $(sdir)/*.pp))
+SRC_CPP		:= $(foreach sdir,$(SRC_DIR),$(wildcard $(sdir)/*.cpp))
 OBJ			:= $(patsubst %.c,$(BUILD_BASE)/%.o,$(SRC)) $(patsubst %.cpp,$(BUILD_BASE)/%.o,$(SRC_CPP))
 LIBS		:= $(addprefix -l,$(LIBS))
 APP_AR		:= $(addprefix $(BUILD_BASE)/,$(TARGET)_app.a)
@@ -182,6 +182,7 @@ vecho := @echo
 endif
 
 vpath %.c $(SRC_DIR)
+vpath %.cpp $(SRC_DIR)
 
 define compile-objects
 $1/%.o: %.c
@@ -213,6 +214,7 @@ $(TARGET_OUT): $(APP_AR)
 	$(vecho) "Done"
 
 $(APP_AR): $(OBJ)
+	$(vecho) $(OBJ)
 	$(vecho) "AR $@"
 	$(Q) $(AR) cru $@ $^
 
