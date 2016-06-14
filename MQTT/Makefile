@@ -181,6 +181,7 @@ Q := @
 vecho := @echo
 endif
 
+vpath %.h $(EXTRA_INCDIR)
 vpath %.c $(SRC_DIR)
 vpath %.cpp $(SRC_DIR)
 
