@@ -227,6 +227,8 @@ void mqttDataCb(uint32_t *args, const char* topic, uint32_t topic_len, const cha
 			os_printf("CONTENT_INSTANCE CREATED\n");
 		}
 	}
+
+	xmlDeleteDocument(doc);
 }
 
 void ICACHE_FLASH_ATTR
